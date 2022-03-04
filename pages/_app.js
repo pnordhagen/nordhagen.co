@@ -5,6 +5,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { pageview, FB_PIXEL_ID } from "../public/lib/fpixel";
+import TagManager from "react-gtm-module";
 
 const handleRouteChange = () => {
 	pageview();
@@ -12,6 +13,10 @@ const handleRouteChange = () => {
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
+
+	useEffect(() => {
+		TagManager.initialize({ gtmId: "GTM-554TS5B" });
+	}, []);
 
 	useEffect(() => {
 		// the below will only fire on route changes (not initial load - that is handled in the script below)
