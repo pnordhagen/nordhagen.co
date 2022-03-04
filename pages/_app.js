@@ -30,10 +30,7 @@ function MyApp({ Component, pageProps }) {
 					content="fjkttrh8fjgamm72umr6avueg2m6r2"
 				/>
 			</Head>
-			<Script
-				strategy="lazyOnload"
-				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-			/>
+
 			<Script id="google-analytics" strategy="lazyOnload">
 				{`
             window.dataLayer = window.dataLayer || [];
@@ -44,6 +41,10 @@ function MyApp({ Component, pageProps }) {
             });
                 `}
 			</Script>
+			<Script
+				strategy="lazyOnload"
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+			/>
 			<Script id="facebook-pixel">
 				{`
         !function(f,b,e,v,n,t,s)
