@@ -29,10 +29,8 @@ function MyApp({ Component, pageProps }) {
 					name="facebook-domain-verification"
 					content="fjkttrh8fjgamm72umr6avueg2m6r2"
 				/>
-			</Head>
-
-			<Script id="google-analytics" strategy="lazyOnload">
-				{`
+				<Script id="google-analytics" strategy="lazyOnload">
+					{`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -40,13 +38,13 @@ function MyApp({ Component, pageProps }) {
               page_path: window.location.pathname,
             });
                 `}
-			</Script>
-			<Script
-				strategy="lazyOnload"
-				src={`https://www.googletagmanager.com/gtag/js?id=GTM-554TS5B`}
-			/>
-			<Script id="facebook-pixel">
-				{`
+				</Script>
+				<Script
+					strategy="lazyOnload"
+					src={`https://www.googletagmanager.com/gtag/js?id=GTM-554TS5B`}
+				/>
+				<Script id="facebook-pixel">
+					{`
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -58,7 +56,8 @@ function MyApp({ Component, pageProps }) {
         fbq('init', ${FB_PIXEL_ID});
         fbq('track', 'PageView');
       `}
-			</Script>
+				</Script>
+			</Head>
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
