@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Layout from "./components/layout";
 import Script from "next/script";
+import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { pageview, FB_PIXEL_ID } from "../public/lib/fpixel";
@@ -22,6 +23,13 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<>
+			<Head>
+				<title>Nordhagen Consulting</title>
+				<meta
+					name="facebook-domain-verification"
+					content="fjkttrh8fjgamm72umr6avueg2m6r2"
+				/>
+			</Head>
 			<Script
 				strategy="lazyOnload"
 				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -50,9 +58,9 @@ function MyApp({ Component, pageProps }) {
         fbq('track', 'PageView');
       `}
 			</Script>
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
 		</>
 	);
 }
