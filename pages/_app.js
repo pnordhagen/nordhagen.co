@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
 			</Script>
 			<Script
 				strategy="lazyOnload"
-				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+				src={`https://www.googletagmanager.com/gtag/js?id=GTM-554TS5B`}
 			/>
 			<Script id="facebook-pixel">
 				{`
